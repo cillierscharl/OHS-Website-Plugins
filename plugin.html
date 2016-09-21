@@ -1,0 +1,98 @@
+<div>
+    <script>
+        var ohs = ohs || {};
+        ohs.configuration = {
+            itemsVisible: 3,
+            autoPlay: true
+        }
+        ohs.items = [{
+            image: "http://lorempixel.com/450/290/",
+            title: "Test Title",
+            description: `Test Description`
+        }, {
+            image: "http://lorempixel.com/450/290/",
+            title: "Test Title",
+            description: `Test Description`
+        }, {
+            image: "http://lorempixel.com/450/290/",
+            title: "Test Title",
+            description: `Test Description`
+        }, {
+            image: "http://lorempixel.com/450/290/",
+            title: "Test Title",
+            description: `Test Description`
+        }, {
+            image: "http://lorempixel.com/450/290/",
+            title: "Test Title",
+            description: `Test Description`
+        }];
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" rel="stylesheet" />
+    <style>
+        #ohs-carousel .item {
+            background: lightgrey;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            box-shadow: 7px 7px 8px -4px #aaa;
+            width: 300px;
+        }
+
+        #ohs-carousel .item .item-title-container {
+            background: #18416B;
+            padding: 5px 10px;
+            font-weight: 300;
+        }
+
+        #ohs-carousel .item .item-title-container h2 {
+            color: white;
+            font-size: 1em;
+        }
+
+        #ohs-carousel .item .item-content {
+            padding: 5px;
+        }
+
+        #ohs-carousel .item .item-content p {
+            font-size: 0.8em;
+        }
+
+        #ohs-carousel .item .item-image {
+            max-width: 100%;
+            min-width: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script type="text/x-jquery-tmpl" id="ohs-carousel-itemTemplate">
+        <div class="item">
+            <img class="item-image" src="${image}" alt="${imageDescription}" />
+            <div class="item-title-container">
+                <h2 class="item-title">${title}</h2>
+            </div>
+            <div class="item-content">
+                ${description}
+            </div>
+        </div>
+    </script>
+    <script>
+        $(document).ready(function() {
+            var $template = $('#ohs-carousel-itemTemplate');
+            var $host = $('#ohs-carousel');
+
+            for (var i = 0; i < ohs.items.length; i++) {
+                $template.tmpl(ohs.items[i]).appendTo($host);
+            }
+
+            var owl = $("#ohs-carousel");
+            owl.owlCarousel({
+                items: ohs.configuration.itemsVisible,
+                autoPlay: ohs.configuration.autoPlay
+            });
+        });
+    </script>
+    <div id="ohs-carousel" class="owl-carousel owl-theme">
+    </div>
+</div>
