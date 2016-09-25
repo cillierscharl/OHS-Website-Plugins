@@ -1,3 +1,3 @@
-# OHS-Carousel-Plugin
+# OHS-Website-Plugins
 
-Oakville Historical Society - Web plugin for a carousel on the Weebly platform
+Oakville Historical Society - Web plugin enhancements built for the non-profit organization
